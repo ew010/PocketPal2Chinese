@@ -29,7 +29,13 @@ jobs:
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
           else
-            CHANGED=$(git diff --name-only HEAD~1)
+            # Check if there's more than one commit
+            if git rev-parse --verify HEAD~1 > /dev/null 2>&1; then
+              CHANGED=$(git diff --name-only HEAD~1)
+            else
+              # Only one commit in the repository, all files are considered changed
+              CHANGED=$(git ls-files)
+            fi
           fi
 
           echo "Changed files:"
