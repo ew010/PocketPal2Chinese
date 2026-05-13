@@ -67,6 +67,11 @@ export const createStyles = (theme: Theme) =>
     dropdown: {
       width: '100%',
     },
+    languageButtonContainer: {
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      gap: 8,
+    },
     buttonContainer: {
       flexDirection: 'row',
       gap: 12,

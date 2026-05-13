@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useContext} from 'react';
-import {View, ScrollView, TouchableOpacity, Alert} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, ScrollView, TouchableOpacity} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {Text, Button, Card, ActivityIndicator, Icon} from 'react-native-paper';
 import * as DocumentPicker from 'react-native-document-picker';
@@ -16,7 +16,6 @@ import {
 } from '../../utils';
 
 import {t} from '../../locales';
-import {L10nContext} from '../../utils';
 import {modelStore} from '../../store';
 
 const TARGET_LANGUAGES = [
@@ -30,7 +29,6 @@ const TARGET_LANGUAGES = [
 ];
 
 export const TranslateScreen: React.FC = () => {
-  const l10n = useContext(L10nContext);
   const theme = useTheme();
   const styles = createStyles(theme);
 
@@ -252,12 +250,7 @@ export const TranslateScreen: React.FC = () => {
             {t('translate.target_language') || 'Target Language'}
           </Text>
           <View style={styles.dropdownContainer}>
-            <View
-              style={{
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                gap: 8,
-              }}>
+            <View style={styles.languageButtonContainer}>
               {TARGET_LANGUAGES.map(lang => (
                 <Button
                   key={lang.value}
