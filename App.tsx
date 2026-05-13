@@ -37,6 +37,7 @@ import {
   SettingsScreen,
   BenchmarkScreen,
   AboutScreen,
+  TranslateScreen,
 
   // Dev tools screen. Only available in debug mode.
   DevToolsScreen,
@@ -128,6 +129,14 @@ const App = observer(() => {
                       options={{
                         headerStyle: styles.headerWithoutDivider,
                         title: currentL10n.screenTitles.benchmark,
+                      }}
+                    />
+                    <Drawer.Screen
+                      name={ROUTES.TRANSLATE}
+                      component={gestureHandlerRootHOC(TranslateScreen)}
+                      options={{
+                        headerStyle: styles.headerWithoutDivider,
+                        title: 'Translate',
                       }}
                     />
                     <Drawer.Screen

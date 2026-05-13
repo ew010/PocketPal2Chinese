@@ -7,6 +7,7 @@ export const ROUTES = {
   BENCHMARK: 'Benchmark',
   SETTINGS: 'Settings',
   APP_INFO: 'App Info',
+  TRANSLATE: 'Translate',
 
   // Dev tools route. Only available in debug mode.
   DEV_TOOLS: 'Dev Tools',

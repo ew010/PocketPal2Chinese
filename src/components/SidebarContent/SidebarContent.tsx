@@ -14,6 +14,7 @@ import {
   BenchmarkIcon,
   ChatIcon,
   EditIcon,
+  GlobeIcon,
   ModelIcon,
   PalIcon,
   SettingsIcon,
@@ -516,6 +517,13 @@ export const SidebarContent: React.FC<DrawerContentComponentProps> = observer(
               onPress={() => props.navigation.navigate(ROUTES.BENCHMARK)}
               style={styles.menuDrawerItem}
               testID="drawer-item-benchmark"
+            />
+            <Drawer.Item
+              label="Translate"
+              icon={() => <GlobeIcon stroke={theme.colors.primary} />}
+              onPress={() => props.navigation.navigate(ROUTES.TRANSLATE)}
+              style={styles.menuDrawerItem}
+              testID="drawer-item-translate"
             />
             <Drawer.Item
               label={l10n.components.sidebarContent.menuItems.settings}
